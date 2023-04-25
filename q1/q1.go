@@ -1,4 +1,6 @@
 package q1
+import "errors"
+
 
 //Em um dia quente de verão, Pete e seu amigo Billy decidiram comprar uma melancia. Eles escolheram a maior e mais
 //saborosa, na opinião deles, e, em seguida, pesaram a fruta nas balanças, obtendo seu peso em quilos. Morrendo de sede,
@@ -14,6 +16,20 @@ package q1
 //da melancia for menor ou igual a 0, a função deve retornar um erro.
 
 func DivideWatermelon(weight int) (bool, error) {
-	// Seu código aqui
+if weight <= 0 {
+		return false, errors.New("peso inválido")
+	}
+	par := false
+	if weight == 2 {
+		return false, nil
+	}
+	if weight%2 == 0 {
+		par = true
+		return true, nil
+	}
+	if par {
+		return false, nil
+	}
 	return false, nil
+
 }
