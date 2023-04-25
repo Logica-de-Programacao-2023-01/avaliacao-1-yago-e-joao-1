@@ -25,14 +25,16 @@ if len(prices) == 0 {
 		} else if prices[i] > prices[i-1] {
 			decrescente = false
 		}
+		
+		}
 		if crescente == true {
-			return 1, nil 
-		} else if decrescente == true{
+			return 1, nil
+		} else if decrescente == true {
 			return 2, nil
 		} else {
 			return 3, nil
 		}
 		return 0, nil
-	} 
+	
 	return 0, nil
 }
